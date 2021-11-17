@@ -14,7 +14,7 @@ The list of Labs is inspired by the OWASP API Security
 - HTTP Method enforcements  
 - Manage Endpoints  
 - Enforce Input Validation with OAS in NGNINX App-Protect WAF  
- - To be added Activate Signatures and Protect from Bots
+- **To be added** Activate Signatures and Protect from Bots
 
 **Environment**
 
@@ -24,7 +24,7 @@ The demo environment is made of :
 
 **Instructions**
 To build and start the environment,   
-` $ docker-compose -f Docker-compose-api-lab.yaml up -d`  
+`$ docker-compose -f Docker-compose-api-lab.yaml up -d`  
 To check every component is setup,  
 `$ docker ps`
 This must let you with 5 containers running  
@@ -35,13 +35,13 @@ This must let you with 5 containers running
 - approtect 
 
 Make sure that you have a host entry similar to the following :  
-xxx.xxx.xxx.xxx api.apigwdemo.com  
+`xxx.xxx.xxx.xxx api.apigwdemo.com`  
 
 Access the http://api.apigwdemo:5601/ to view the logs of NGINX App Protect  
 
 **Secure Transport**</br>
 The NGINX API Gateway is configured with SSL. You can check the configuration in nginx.conf and try the connection to https://api.apigwdemo.com/api/f1/drivers either with the browser, or on the command line :  
-'$ curl -k  https://api.apigwdemo.com/api/f1/drivers'
+`$ curl -k  https://api.apigwdemo.com/api/f1/drivers`
 
 **HTTP Method enforcements**</br>
 An Application Security Policy in NGINX App Protect will allow you block the PUT method. To test it :  
