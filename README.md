@@ -14,9 +14,7 @@ The list of Labs is inspired by the OWASP API Security
 - HTTP Method enforcements  
 - Manage Endpoints  
 - Enforce Input Validation with OAS in NGNINX App-Protect WAF  
-
-# Activate Signatures
-# Protect from Bots
+ - To be added Activate Signatures and Protect from Bots
 
 **Environment**
 
