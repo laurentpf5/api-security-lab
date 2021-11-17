@@ -8,7 +8,7 @@ An image of NGINX App-Protect is built with the latest attack signature and thre
 
 The list of Labs is inspired by the OWASP API Security 
 
-**Labs** 
+**Labs**</br> 
 
 - Secure Transport  
 - HTTP Method enforcements  
@@ -16,13 +16,13 @@ The list of Labs is inspired by the OWASP API Security
 - Enforce Input Validation with OAS in NGNINX App-Protect WAF  
 - **To be added** Activate Signatures and Protect from Bots
 
-**Environment**
+**Environment**</br>
 
 The demo environment is made of :  
 - Two containers running F1 Ergast API App  
 - One NGINX+ Container configured with NGINX App-Protect  
 
-**Instructions**
+**Instructions**</br>
 To build and start the environment,   
 `$ docker-compose -f Docker-compose-api-lab.yaml up -d`  
 To check every component is setup,  
