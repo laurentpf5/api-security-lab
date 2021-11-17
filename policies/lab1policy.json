@@ -1,0 +1,8 @@
+{
+    "policy":
+    {
+        "name": "policy-api",
+        "applicationLanguage": "utf-8",
+        "enforcementMode": "blocking"
+    }
+}

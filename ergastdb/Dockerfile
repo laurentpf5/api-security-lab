@@ -1,0 +1,8 @@
+FROM mysql:5.6
+
+RUN sed -i -e"s/^bind-address\s*=\s*127.0.0.1/bind-address=0.0.0.0/" /etc/mysql/my.cnf
+
+RUN apt-get update && apt-get install -y wget && apt-get clean
+
+WORKDIR /docker-entrypoint-initdb.d
+RUN wget http://ergast.com/downloads/f1db.sql.gz -O - | gzip -cd > f1db.sql

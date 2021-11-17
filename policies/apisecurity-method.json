@@ -1,0 +1,41 @@
+{
+    "policy": {
+        "name": "blocking_policy",
+        "template": { "name": "POLICY_TEMPLATE_NGINX_BASE" },
+        "applicationLanguage": "utf-8",
+        "enforcementMode": "blocking",
+        "blocking-settings": {
+            "violations": [
+                {
+                    "name": "VIOL_METHOD",
+                    "alarm": true,
+                    "block": true
+                }
+            ]
+        },
+        "methods": [
+            {
+                "name": "GET"
+            },
+            {
+                "name": "POST"
+            },
+            {
+                "name": "HEAD"
+            },
+            {
+                "name": "PUT",
+                "$action": "delete"
+            },
+            {
+                "name": "PATCH"
+            },
+            {
+                "name": "DELETE"
+            },
+            {
+                "name": "OPTIONS"
+            }
+        ]
+    }
+}

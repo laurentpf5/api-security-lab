@@ -1,0 +1,18 @@
+{
+  "policy": {
+    "name": "policy_api_through",
+    "template": {
+      "name": "POLICY_TEMPLATE_NGINX_BASE"
+    },
+    "applicationLanguage": "utf-8",
+    "enforcementMode": "blocking",
+    "blocking-settings": {
+      "http-protocols": [
+        {
+          "description": "Host header contains IP address",
+          "enabled": true
+        }
+      ]
+    }
+  }
+}

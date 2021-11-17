@@ -1,0 +1,59 @@
+{
+    "policy": {
+        "name": "apisecurity_URL",
+        "template": {
+            "name": "POLICY_TEMPLATE_NGINX_BASE"
+        },
+        "applicationLanguage": "utf-8",
+        "enforcementMode": "blocking",
+        "blocking-settings": {
+            "bot-defense": {
+                "settings": {
+                  "isEnabled": false
+                },
+                "mitigations": {
+                    "classes": [
+                        {
+                            "name": "trusted-bot",
+                            "action": "ignore"
+                        },
+                        {
+                            "name": "untrusted-bot",
+                            "action": "ignore"
+                        },
+                        {
+                            "name": "malicious-bot",
+                            "action": "ignore"
+                        }
+                    ]
+                }
+              },
+            "violations": [
+                {
+                    "name": "VIOL_URL",
+                    "alarm": true,
+                    "block": true
+                },
+                {
+                    "name": "VIOL_METHOD",
+                    "alarm": true,
+                    "block": true
+                }
+            ]
+        },
+        "urls": [
+            {
+                "method": "GET",
+                "name": "/api/f1/drivers",
+                "type": "explicit",
+                "isAllowed" : true
+            },
+            {
+                "method": "*",
+                "name": "/api/f2/*",
+                "type": "wildcard",
+                "isAllowed": false
+            }
+        ]
+    }
+}

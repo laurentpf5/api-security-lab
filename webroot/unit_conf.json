@@ -1,0 +1,18 @@
+{
+    "listeners": {
+        "*:80": {
+            "application": "ergast"
+        }
+    },
+    "applications": {
+        "ergast": {
+            "type": "php",
+            "processes": 4,
+            "user": "root",
+            "group": "root",
+            "root": "/var/www/html/ergast",
+            "index": "index.php",
+            "script": "index.php"
+        }
+    }
+}

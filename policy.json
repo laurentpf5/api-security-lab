@@ -1,0 +1,871 @@
+{
+   "policy" : {
+      "blocking-settings" : {
+         "evasions" : [
+            {
+               "description" : "Directory traversals",
+               "enabled" : false
+            },
+            {
+               "description" : "Multiple decoding",
+               "enabled" : false,
+               "maxDecodingPasses" : 3
+            },
+            {
+               "description" : "%u decoding",
+               "enabled" : false
+            },
+            {
+               "description" : "IIS backslashes",
+               "enabled" : false
+            },
+            {
+               "description" : "IIS Unicode codepoints",
+               "enabled" : false
+            },
+            {
+               "description" : "Bare byte decoding",
+               "enabled" : false
+            },
+            {
+               "description" : "Apache whitespace",
+               "enabled" : false
+            },
+            {
+               "description" : "Bad unescape",
+               "enabled" : false
+            }
+         ],
+         "http-protocols" : [
+            {
+               "description" : "Chunked request with Content-Length header",
+               "enabled" : false
+            },
+            {
+               "description" : "Bad multipart/form-data request parsing",
+               "enabled" : false
+            },
+            {
+               "description" : "Bad multipart parameters parsing",
+               "enabled" : false
+            },
+            {
+               "description" : "Host header contains IP address",
+               "enabled" : false
+            },
+            {
+               "description" : "High ASCII characters in headers",
+               "enabled" : false
+            },
+            {
+               "description" : "Check maximum number of headers",
+               "enabled" : false,
+               "maxHeaders" : 20
+            },
+            {
+               "description" : "Check maximum number of parameters",
+               "enabled" : false,
+               "maxParams" : 500
+            },
+            {
+               "description" : "Multiple host headers",
+               "enabled" : false
+            },
+            {
+               "description" : "Unescaped space in URL",
+               "enabled" : false
+            }
+         ],
+         "violations" : [
+            {
+               "block" : true,
+               "name" : "VIOL_ASM_COOKIE_MODIFIED"
+            },
+            {
+               "alarm" : false,
+               "name" : "VIOL_COOKIE_LENGTH"
+            },
+            {
+               "alarm" : false,
+               "name" : "VIOL_COOKIE_MODIFIED"
+            },
+            {
+               "block" : true,
+               "name" : "VIOL_CSRF"
+            },
+            {
+               "block" : true,
+               "name" : "VIOL_DATA_GUARD"
+            },
+            {
+               "block" : true,
+               "name" : "VIOL_ENCODING"
+            },
+            {
+               "block" : true,
+               "name" : "VIOL_EVASION"
+            },
+            {
+               "block" : true,
+               "name" : "VIOL_FILETYPE"
+            },
+            {
+               "block" : true,
+               "name" : "VIOL_FILE_UPLOAD"
+            },
+            {
+               "block" : true,
+               "name" : "VIOL_FILE_UPLOAD_IN_BODY"
+            },
+            {
+               "block" : true,
+               "name" : "VIOL_GRPC_FORMAT"
+            },
+            {
+               "block" : true,
+               "name" : "VIOL_GRPC_METHOD"
+            },
+            {
+               "alarm" : false,
+               "name" : "VIOL_HEADER_LENGTH"
+            },
+            {
+               "alarm" : false,
+               "name" : "VIOL_HEADER_METACHAR"
+            },
+            {
+               "block" : true,
+               "name" : "VIOL_HTTP_PROTOCOL"
+            },
+            {
+               "block" : true,
+               "name" : "VIOL_HTTP_RESPONSE_STATUS"
+            },
+            {
+               "alarm" : false,
+               "name" : "VIOL_JSON_FORMAT"
+            },
+            {
+               "block" : true,
+               "name" : "VIOL_JSON_SCHEMA"
+            },
+            {
+               "block" : true,
+               "name" : "VIOL_MANDATORY_HEADER"
+            },
+            {
+               "alarm" : false,
+               "name" : "VIOL_MANDATORY_PARAMETER"
+            },
+            {
+               "alarm" : false,
+               "name" : "VIOL_MANDATORY_REQUEST_BODY"
+            },
+            {
+               "block" : true,
+               "name" : "VIOL_METHOD"
+            },
+            {
+               "alarm" : false,
+               "name" : "VIOL_PARAMETER"
+            },
+            {
+               "alarm" : false,
+               "name" : "VIOL_PARAMETER_ARRAY_VALUE"
+            },
+            {
+               "alarm" : false,
+               "name" : "VIOL_PARAMETER_DATA_TYPE"
+            },
+            {
+               "alarm" : false,
+               "name" : "VIOL_PARAMETER_EMPTY_VALUE"
+            },
+            {
+               "block" : true,
+               "name" : "VIOL_PARAMETER_LOCATION"
+            },
+            {
+               "alarm" : false,
+               "name" : "VIOL_PARAMETER_MULTIPART_NULL_VALUE"
+            },
+            {
+               "alarm" : false,
+               "name" : "VIOL_PARAMETER_NAME_METACHAR"
+            },
+            {
+               "alarm" : false,
+               "name" : "VIOL_PARAMETER_NUMERIC_VALUE"
+            },
+            {
+               "alarm" : false,
+               "name" : "VIOL_PARAMETER_REPEATED"
+            },
+            {
+               "alarm" : false,
+               "name" : "VIOL_PARAMETER_STATIC_VALUE"
+            },
+            {
+               "block" : true,
+               "name" : "VIOL_PARAMETER_VALUE_BASE64"
+            },
+            {
+               "alarm" : false,
+               "name" : "VIOL_PARAMETER_VALUE_LENGTH"
+            },
+            {
+               "alarm" : false,
+               "name" : "VIOL_PARAMETER_VALUE_METACHAR"
+            },
+            {
+               "alarm" : false,
+               "name" : "VIOL_PARAMETER_VALUE_REGEXP"
+            },
+            {
+               "block" : true,
+               "name" : "VIOL_POST_DATA_LENGTH"
+            },
+            {
+               "block" : true,
+               "name" : "VIOL_QUERY_STRING_LENGTH"
+            },
+            {
+               "alarm" : false,
+               "block" : false,
+               "name" : "VIOL_RATING_THREAT"
+            },
+            {
+               "block" : true,
+               "name" : "VIOL_REQUEST_LENGTH"
+            },
+            {
+               "alarm" : false,
+               "name" : "VIOL_REQUEST_MAX_LENGTH"
+            },
+            {
+               "alarm" : false,
+               "name" : "VIOL_URL"
+            },
+            {
+               "alarm" : false,
+               "name" : "VIOL_URL_CONTENT_TYPE"
+            },
+            {
+               "block" : true,
+               "name" : "VIOL_URL_LENGTH"
+            },
+            {
+               "alarm" : false,
+               "name" : "VIOL_URL_METACHAR"
+            },
+            {
+               "alarm" : false,
+               "name" : "VIOL_XML_FORMAT"
+            }
+         ]
+      },
+      "bot-defense" : {
+         "settings" : {
+            "isEnabled" : false
+         }
+      },
+      "caseInsensitive" : false,
+      "character-sets" : [
+         {
+            "characterSet" : [
+               {
+                  "isAllowed" : false,
+                  "metachar" : "0x20"
+               }
+            ],
+            "characterSetType" : "json-content"
+         }
+      ],
+      "cookie-settings" : {
+         "maximumCookieHeaderLength" : "8192"
+      },
+      "cookies" : [
+         {
+            "decodeValueAsBase64" : "disabled",
+            "enforcementType" : "allow",
+            "name" : "*",
+            "type" : "wildcard",
+            "wildcardOrder" : 1
+         }
+      ],
+      "csrf-urls" : [],
+      "description" : "Policy to be converted to NAP",
+      "enablePassiveMode" : false,
+      "enforcementMode" : "blocking",
+      "enforcer-settings" : {
+         "enforcerStateCookies" : {
+            "httpOnlyAttribute" : false,
+            "sameSiteAttribute" : "none",
+            "secureAttribute" : "never"
+         }
+      },
+      "filetypes" : [
+         {
+            "allowed" : true,
+            "checkPostDataLength" : true,
+            "checkQueryStringLength" : true,
+            "checkRequestLength" : true,
+            "checkUrlLength" : true,
+            "name" : "*",
+            "postDataLength" : 1000,
+            "queryStringLength" : 1000,
+            "requestLength" : 5000,
+            "type" : "wildcard",
+            "urlLength" : 100,
+            "wildcardOrder" : 1
+         },
+         {
+            "$action" : "delete",
+            "name" : "bak"
+         },
+         {
+            "$action" : "delete",
+            "name" : "bat"
+         },
+         {
+            "$action" : "delete",
+            "name" : "bck"
+         },
+         {
+            "$action" : "delete",
+            "name" : "bin"
+         },
+         {
+            "$action" : "delete",
+            "name" : "bkp"
+         },
+         {
+            "$action" : "delete",
+            "name" : "cer"
+         },
+         {
+            "$action" : "delete",
+            "name" : "cfg"
+         },
+         {
+            "$action" : "delete",
+            "name" : "cgi"
+         },
+         {
+            "$action" : "delete",
+            "name" : "cmd"
+         },
+         {
+            "$action" : "delete",
+            "name" : "com"
+         },
+         {
+            "$action" : "delete",
+            "name" : "conf"
+         },
+         {
+            "$action" : "delete",
+            "name" : "config"
+         },
+         {
+            "$action" : "delete",
+            "name" : "crt"
+         },
+         {
+            "$action" : "delete",
+            "name" : "dat"
+         },
+         {
+            "$action" : "delete",
+            "name" : "der"
+         },
+         {
+            "$action" : "delete",
+            "name" : "dll"
+         },
+         {
+            "$action" : "delete",
+            "name" : "eml"
+         },
+         {
+            "$action" : "delete",
+            "name" : "exe"
+         },
+         {
+            "$action" : "delete",
+            "name" : "hta"
+         },
+         {
+            "$action" : "delete",
+            "name" : "htr"
+         },
+         {
+            "$action" : "delete",
+            "name" : "htw"
+         },
+         {
+            "$action" : "delete",
+            "name" : "ida"
+         },
+         {
+            "$action" : "delete",
+            "name" : "idc"
+         },
+         {
+            "$action" : "delete",
+            "name" : "idq"
+         },
+         {
+            "$action" : "delete",
+            "name" : "ini"
+         },
+         {
+            "$action" : "delete",
+            "name" : "key"
+         },
+         {
+            "$action" : "delete",
+            "name" : "log"
+         },
+         {
+            "$action" : "delete",
+            "name" : "msi"
+         },
+         {
+            "$action" : "delete",
+            "name" : "nws"
+         },
+         {
+            "$action" : "delete",
+            "name" : "old"
+         },
+         {
+            "$action" : "delete",
+            "name" : "p12"
+         },
+         {
+            "$action" : "delete",
+            "name" : "p7b"
+         },
+         {
+            "$action" : "delete",
+            "name" : "p7c"
+         },
+         {
+            "$action" : "delete",
+            "name" : "pem"
+         },
+         {
+            "$action" : "delete",
+            "name" : "pfx"
+         },
+         {
+            "$action" : "delete",
+            "name" : "pol"
+         },
+         {
+            "$action" : "delete",
+            "name" : "printer"
+         },
+         {
+            "$action" : "delete",
+            "name" : "reg"
+         },
+         {
+            "$action" : "delete",
+            "name" : "sav"
+         },
+         {
+            "$action" : "delete",
+            "name" : "save"
+         },
+         {
+            "$action" : "delete",
+            "name" : "shtm"
+         },
+         {
+            "$action" : "delete",
+            "name" : "shtml"
+         },
+         {
+            "$action" : "delete",
+            "name" : "stm"
+         },
+         {
+            "$action" : "delete",
+            "name" : "sys"
+         },
+         {
+            "$action" : "delete",
+            "name" : "temp"
+         },
+         {
+            "$action" : "delete",
+            "name" : "tmp"
+         },
+         {
+            "$action" : "delete",
+            "name" : "wmz"
+         }
+      ],
+      "fullPath" : "/Common/Demo_NGINX_Policy",
+      "general" : {},
+      "header-settings" : {
+         "maximumHttpHeaderLength" : "8192"
+      },
+      "headers" : [
+         {
+            "checkSignatures" : true,
+            "decodeValueAsBase64" : "disabled",
+            "name" : "*",
+            "type" : "wildcard",
+            "wildcardOrder" : 1
+         },
+         {
+            "allowRepeatedOccurrences" : true,
+            "name" : "cookie",
+            "type" : "explicit"
+         },
+         {
+            "checkSignatures" : true,
+            "decodeValueAsBase64" : "disabled",
+            "name" : "referer",
+            "type" : "explicit"
+         },
+         {
+            "checkSignatures" : true,
+            "name" : "transfer-encoding",
+            "normalizationViolations" : false,
+            "type" : "explicit",
+            "urlNormalization" : false
+         }
+      ],
+      "json-profiles" : [
+         {
+            "defenseAttributes" : {
+               "maximumArrayLength" : "any",
+               "maximumStructureDepth" : "any",
+               "maximumTotalLengthOfJSONData" : "any",
+               "maximumValueLength" : "any",
+               "tolerateJSONParsingWarnings" : true
+            },
+            "handleJsonValuesAsParameters" : true,
+            "hasValidationFiles" : false,
+            "name" : "Default",
+            "validationFiles" : []
+         }
+      ],
+      "methods" : [
+         {
+            "$action" : "delete",
+            "name" : "OPTIONS"
+         },
+         {
+            "$action" : "delete",
+            "name" : "PUT"
+         },
+         {
+            "$action" : "delete",
+            "name" : "DELETE"
+         },
+         {
+            "$action" : "delete",
+            "name" : "PATCH"
+         }
+      ],
+      "name" : "Demo_NGINX_Policy",
+      "parameters" : [
+         {
+            "allowRepeatedParameterName" : false,
+            "checkMetachars" : false,
+            "decodeValueAsBase64" : "disabled",
+            "isCookie" : false,
+            "isHeader" : false,
+            "level" : "global",
+            "metacharsOnParameterValueCheck" : false,
+            "name" : "*",
+            "parameterLocation" : "any",
+            "type" : "wildcard",
+            "valueType" : "auto-detect"
+         }
+      ],
+      "server-technologies" : [
+         {
+            "serverTechnologyName" : "Apache/NCSA HTTP Server"
+         },
+         {
+            "serverTechnologyName" : "CGI"
+         },
+         {
+            "serverTechnologyName" : "MySQL"
+         },
+         {
+            "serverTechnologyName" : "PHP"
+         }
+      ],
+      "signature-sets" : [
+         {
+            "alarm" : true,
+            "block" : true,
+            "name" : "Generic Detection Signatures (High/Medium Accuracy)"
+         },
+         {
+            "$action" : "delete",
+            "name" : "Predictable Resource Location Signatures"
+         },
+         {
+            "$action" : "delete",
+            "name" : "Remote File Include Signatures"
+         },
+         {
+            "$action" : "delete",
+            "name" : "Directory Indexing Signatures"
+         },
+         {
+            "$action" : "delete",
+            "name" : "Information Leakage Signatures"
+         },
+         {
+            "$action" : "delete",
+            "name" : "Server Side Code Injection Signatures"
+         },
+         {
+            "$action" : "delete",
+            "name" : "Command Execution Signatures"
+         },
+         {
+            "$action" : "delete",
+            "name" : "XPath Injection Signatures"
+         },
+         {
+            "$action" : "delete",
+            "name" : "Path Traversal Signatures"
+         },
+         {
+            "$action" : "delete",
+            "name" : "OS Command Injection Signatures"
+         },
+         {
+            "$action" : "delete",
+            "name" : "Cross Site Scripting Signatures"
+         },
+         {
+            "$action" : "delete",
+            "name" : "SQL Injection Signatures"
+         },
+         {
+            "$action" : "delete",
+            "name" : "High Accuracy Signatures"
+         },
+         {
+            "alarm" : true,
+            "block" : true,
+            "name" : "Apache/NCSA HTTP Server Signatures (High/Medium Accuracy)",
+            "signatureSet" : {
+               "filter" : {
+                  "accuracyFilter" : "ge",
+                  "accuracyValue" : "medium",
+                  "hasCve" : "all",
+                  "lastUpdatedFilter" : "all",
+                  "riskFilter" : "all",
+                  "riskValue" : "all",
+                  "signatureType" : "all",
+                  "tagFilter" : "all",
+                  "userDefinedFilter" : "all"
+               },
+               "name" : "Apache/NCSA HTTP Server Signatures (High/Medium Accuracy)",
+               "systems" : [
+                  {
+                     "name" : "Apache"
+                  }
+               ],
+               "type" : "filter-based"
+            }
+         },
+         {
+            "alarm" : true,
+            "block" : true,
+            "name" : "PHP Signatures (High/Medium Accuracy)",
+            "signatureSet" : {
+               "filter" : {
+                  "accuracyFilter" : "ge",
+                  "accuracyValue" : "medium",
+                  "hasCve" : "all",
+                  "lastUpdatedFilter" : "all",
+                  "riskFilter" : "all",
+                  "riskValue" : "all",
+                  "signatureType" : "all",
+                  "tagFilter" : "all",
+                  "userDefinedFilter" : "all"
+               },
+               "name" : "PHP Signatures (High/Medium Accuracy)",
+               "systems" : [
+                  {
+                     "name" : "PHP"
+                  }
+               ],
+               "type" : "filter-based"
+            }
+         },
+         {
+            "alarm" : true,
+            "block" : true,
+            "name" : "MySQL Signatures (High/Medium Accuracy)",
+            "signatureSet" : {
+               "filter" : {
+                  "accuracyFilter" : "ge",
+                  "accuracyValue" : "medium",
+                  "hasCve" : "all",
+                  "lastUpdatedFilter" : "all",
+                  "riskFilter" : "all",
+                  "riskValue" : "all",
+                  "signatureType" : "all",
+                  "tagFilter" : "all",
+                  "userDefinedFilter" : "all"
+               },
+               "name" : "MySQL Signatures (High/Medium Accuracy)",
+               "systems" : [
+                  {
+                     "name" : "MySQL"
+                  }
+               ],
+               "type" : "filter-based"
+            }
+         },
+         {
+            "alarm" : true,
+            "block" : true,
+            "name" : "CGI Signatures (High/Medium Accuracy)",
+            "signatureSet" : {
+               "filter" : {
+                  "accuracyFilter" : "ge",
+                  "accuracyValue" : "medium",
+                  "hasCve" : "all",
+                  "lastUpdatedFilter" : "all",
+                  "riskFilter" : "all",
+                  "riskValue" : "all",
+                  "signatureType" : "all",
+                  "tagFilter" : "all",
+                  "userDefinedFilter" : "all"
+               },
+               "name" : "CGI Signatures (High/Medium Accuracy)",
+               "systems" : [
+                  {
+                     "name" : "CGI"
+                  }
+               ],
+               "type" : "filter-based"
+            }
+         },
+         {
+            "$action" : "delete",
+            "name" : "Authentication/Authorization Attack Signatures"
+         },
+         {
+            "$action" : "delete",
+            "name" : "Buffer Overflow Signatures"
+         },
+         {
+            "$action" : "delete",
+            "name" : "Denial of Service Signatures"
+         },
+         {
+            "$action" : "delete",
+            "name" : "Vulnerability Scan Signatures"
+         },
+         {
+            "$action" : "delete",
+            "name" : "CVE Signatures"
+         },
+         {
+            "$action" : "delete",
+            "name" : "XML External Entities (XXE) Signatures"
+         }
+      ],
+      "signature-settings" : {},
+      "template" : {
+         "name" : "POLICY_TEMPLATE_NGINX_BASE"
+      },
+      "urls" : [
+         {
+            "metacharsOnUrlCheck" : false,
+            "method" : "*",
+            "name" : "*",
+            "protocol" : "http",
+            "type" : "wildcard"
+         },
+         {
+            "attackSignaturesCheck" : true,
+            "clickjackingProtection" : false,
+            "disallowFileUploadOfExecutables" : false,
+            "html5CrossOriginRequestsEnforcement" : {
+               "enforcementMode" : "disabled"
+            },
+            "isAllowed" : true,
+            "mandatoryBody" : false,
+            "metacharsOnUrlCheck" : false,
+            "method" : "*",
+            "methodsOverrideOnUrlCheck" : false,
+            "name" : "*",
+            "protocol" : "https",
+            "type" : "wildcard",
+            "urlContentProfiles" : [
+               {
+                  "headerName" : "*",
+                  "headerOrder" : "default",
+                  "headerValue" : "*",
+                  "type" : "apply-value-and-content-signatures"
+               },
+               {
+                  "headerName" : "Content-Type",
+                  "headerOrder" : "1",
+                  "headerValue" : "*form*",
+                  "type" : "form-data"
+               },
+               {
+                  "contentProfile" : {
+                     "name" : "Default"
+                  },
+                  "headerName" : "Content-Type",
+                  "headerOrder" : "2",
+                  "headerValue" : "*json*",
+                  "type" : "json"
+               },
+               {
+                  "contentProfile" : {
+                     "name" : "Default"
+                  },
+                  "headerName" : "Content-Type",
+                  "headerOrder" : "3",
+                  "headerValue" : "*xml*",
+                  "type" : "xml"
+               }
+            ],
+            "wildcardOrder" : 1
+         }
+      ],
+      "xml-profiles" : [
+         {
+            "defenseAttributes" : {
+               "allowCDATA" : true,
+               "allowDTDs" : true,
+               "allowExternalReferences" : true,
+               "allowProcessingInstructions" : true,
+               "maximumAttributeValueLength" : "any",
+               "maximumAttributesPerElement" : "any",
+               "maximumChildrenPerElement" : "any",
+               "maximumDocumentDepth" : "any",
+               "maximumDocumentSize" : "any",
+               "maximumElements" : "any",
+               "maximumNSDeclarations" : "any",
+               "maximumNameLength" : "any",
+               "maximumNamespaceLength" : "any",
+               "tolerateCloseTagShorthand" : true,
+               "tolerateLeadingWhiteSpace" : true,
+               "tolerateNumericNames" : true
+            },
+            "name" : "Default"
+         }
+      ]
+   }
+}

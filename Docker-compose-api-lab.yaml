@@ -1,0 +1,55 @@
+version: '3'
+services:
+    db:
+       container_name: ergastdb
+       build: ergastdb
+       environment:
+            MYSQL_ROOT_PASSWORD: f1
+            MYSQL_DATABASE: ergastdb
+       ports:
+            - '3306:3306'
+    ergast01:
+        container_name: ergast01
+        build: webroot
+        hostname: ergast01
+        ports:
+            - '8001:80'
+        links:
+            - db:ergastdb
+
+    ergast02:
+       container_name: ergast02
+       build: webroot
+       hostname: ergast02
+       ports:
+            - '8002:80'
+       links:
+            - db:ergastdb
+
+    approtect:
+        image: app-protect:latest
+        volumes:
+            - ./custom_log_format.json:/etc/nginx/custom_log_format.json
+            - ./labpolicy.json:/etc/nginx/labpolicy.json
+            - ./nginx.conf:/etc/nginx/nginx.conf
+            - ./nginx-repo.crt:/etc/ssl/nginx/nginx-repo.crt
+            - ./nginx-repo.key:/etc/ssl/nginx/nginx-repo.key
+            - ./apigwdemo.com.crt:/etc/nginx/apigwdemo.com.crt
+            - ./apigwdemo.com.key:/etc/nginx/apigwdemo.com.key
+            - ./ergast-openapi-doc.yaml:/etc/app_protect/conf/ergast-openapi-doc.yaml
+        ports:
+            - "80:80"
+            - "443:443"
+
+    elasticsearch:
+        image: sebp/elk:793
+        restart: always
+        volumes:
+            - ./logstash/conf.d:/etc/logstash/conf.d
+            - elk:/var/lib/elasticsearch
+        ports:
+            - 9200:9200
+            - 5601:5601
+            - 5144:5144
+volumes:
+    elk:
